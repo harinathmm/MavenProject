@@ -3,16 +3,16 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
         stage('Build') { 
             steps {
-                sh 'mvn -B -DskipTests clean package' 
+                bat 'mvn -B -DskipTests clean package' 
             }
             post {
                 always {
-                    junit 'target/surefire-reports/*.xml' 
+                    junit 'C:\Project\practice\target\surefire-reports*.xml' 
                 }
             }
         }
